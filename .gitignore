@@ -1,0 +1,10 @@
+# Ignore all binary, npm, and python directories
+binary
+npm
+python
+
+# Ignore all archives
+*.tar
+*.tar.gz
+*.tgz
+*.zip
