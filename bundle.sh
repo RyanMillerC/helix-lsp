@@ -59,6 +59,7 @@ with_curl() {
   URL="$1"
   FILE_NAME="$2"
 
+  echo "Downloading $FILE_NAME binary file with curl..."
   curl -L -s -o "$VERSION/binary/$FILE_NAME" "$URL"
 }
 
@@ -66,6 +67,7 @@ with_curl() {
 with_npm() {
   PACKAGE_NAME="$1"
 
+  echo "Downloading $PACKAGE_NAME with npm..."
   npm install -g --prefix ./tmp "$PACKAGE_NAME"
   cd ./tmp/node_modules/$PACKAGE_NAME
   yarn pack
@@ -77,7 +79,11 @@ with_npm() {
 with_pip() {
   PACKAGE_NAME="$1"
 
+  echo "Downloading $PACKAGE_NAME with pip..."
   cd "$VERSION/python"
   pip download --prefer-binary "$PACKAGE_NAME"
   cd ../..
 }
+
+# Load script
+main
