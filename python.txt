@@ -1,7 +1,0 @@
-cmake-language-server
-'python-lsp-server[all]'
-pylsp-mypy
-python-lsp-ruff
-ruff-lsp
-ruff
-black
