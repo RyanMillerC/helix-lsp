@@ -69,10 +69,10 @@ with_npm() {
 
   echo "Downloading $PACKAGE_NAME with npm..."
   npm install -g --prefix ./tmp "$PACKAGE_NAME"
-  cd ./tmp/node_modules/$PACKAGE_NAME
+  cd "./tmp/node_modules/$PACKAGE_NAME"
   yarn pack
-  cp "${PACKAGE_NAME}-*.tgz" "../../../$VERSION/npm"
-  cd ../../..
+  cd -
+  cp "./tmp/node_modules/$PACKAGE_NAME/${PACKAGE_NAME}-*.tgz" "$VERSION/npm"
 }
 
 # Download a Python package with pip
@@ -82,7 +82,7 @@ with_pip() {
   echo "Downloading $PACKAGE_NAME with pip..."
   cd "$VERSION/python"
   pip download --prefer-binary "$PACKAGE_NAME"
-  cd ../..
+  cd -
 }
 
 # Load script
