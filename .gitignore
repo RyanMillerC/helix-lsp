@@ -8,3 +8,6 @@ python
 *.tar.gz
 *.tgz
 *.zip
+
+# Ignore tmp
+tmp
